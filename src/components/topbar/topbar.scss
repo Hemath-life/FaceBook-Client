@@ -1,0 +1,45 @@
+button,
+input {
+	border: none !important;
+}
+button:focus,
+input:focus {
+	box-shadow: none !important;
+}
+
+.searchBar:focus {
+	outline: none !important;
+	border: none !important;
+}
+.searchIcon {
+	margin-left: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.topbarImg {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.topbarIconItem {
+	cursor: pointer;
+	position: relative;
+}
+
+.topbarIconBadge {
+	width: 15px;
+	height: 15px;
+	background-color: white;
+	border-radius: 50%;
+	color: var(--text-color);
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+}
