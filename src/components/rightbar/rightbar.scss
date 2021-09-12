@@ -1,0 +1,50 @@
+.rightBar {
+	height: 90vh;
+	overflow-y: scroll;
+	width: 25vw;
+	padding: 15px;
+	.birthdayContainer img {
+		height: 32px;
+		width: 32px;
+		object-fit: cover;
+	}
+}
+.birthdayContainer {
+	span {
+		font-size: 12px;
+	}
+}
+
+.rightBarAd {
+	margin-top: 10px;
+	img {
+		border-radius: 10px;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+.onlineFriends {
+	margin-top: 10px;
+	img {
+		height: 32px;
+		width: 32px;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+	li {
+		position: relative;
+		.online {
+			width: 10px;
+			height: 10px;
+			background-color: green;
+			border-radius: 50%;
+			position: absolute;
+			top: 0px;
+			left: 25px;
+			border: 2px solid #fff;
+		}
+		span:nth-child(3) {
+			font-weight: 600;
+		}
+	}
+}
