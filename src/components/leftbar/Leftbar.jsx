@@ -1,5 +1,5 @@
+import { Users } from "../../dummyData"
 import "./leftBar.scss"
-
 const LeftBar = () => {
 	return (
 		<div className=' sideBar'>
@@ -120,26 +120,14 @@ const LeftBar = () => {
 			<button className='btn bl-0 btn-blue text-white'>Show More</button>
 			<hr className='' />
 			<ul className='friendLists'>
-				<li>
-					<img src='assets/person/2.jpeg' alt='' />
-					<span>Justin</span>
-				</li>
-				<li>
-					<img src='assets/person/3.jpeg' alt='' />
-					<span>Hallow</span>
-				</li>
-				<li>
-					<img src='assets/person/4.jpeg' alt='' />
-					<span>Jason</span>
-				</li>
-				<li>
-					<img src='assets/person/5.jpeg' alt='' />
-					<span>Baby</span>
-				</li>
-				<li>
-					<img src='assets/person/6.jpeg' alt='' />
-					<span>Come</span>
-				</li>
+				{Users.map(u => {
+					return (
+						<li>
+							<img src={u.profilePicture} alt='' />
+							<span>{u.username}</span>
+						</li>
+					)
+				})}
 			</ul>
 		</div>
 	)

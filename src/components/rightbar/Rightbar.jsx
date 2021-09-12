@@ -18,9 +18,11 @@ const RightBar = () => {
 					<span>
 						<b>Online Friends</b>
 					</span>
-					{Users.map(u => (
-						<Online key={u.id} user={u} />
-					))}
+					<ul className='p-0 d-flex  mt-2 flex-column'>
+						{Users.map(u => (
+							<Online key={u.id} user={u} />
+						))}
+					</ul>
 				</div>
 			</div>
 		</div>

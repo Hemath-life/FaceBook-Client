@@ -1,8 +1,15 @@
+import { useState } from "react"
 import { Users } from "../../dummyData"
 import "./post.scss"
 
 const Post = ({ post }) => {
-	const user = Users.filter(u => u.id === 1)
+	const [like, setLike] = useState(post.like)
+	const [isLiked, setIsLiked] = useState(false)
+
+	const likeHandel = () => {
+		setLike(isLiked ? like - 1 : like + 1)
+		setIsLiked(!isLiked)
+	}
 	return (
 		<div className='postContainer'>
 			<div className='postTop d-flex justify-content-between align-items-center'>
@@ -36,9 +43,9 @@ const Post = ({ post }) => {
 			</div>
 			<div className='postBottom d-flex justify-content-between align-items-center'>
 				<div className='postBottomLeft d-flex justify-content-between align-items-center'>
-					<img className=' ' src='assets/like.png' alt='' />
+					<img className=' ' src='assets/like.png' alt='' onClick={likeHandel} />
 					<img className='ms-2' src='assets/heart.png' alt='' />
-					<span className='ms-2'>{post.like} people like it</span>
+					<span className='ms-2'>{like} people like it</span>
 				</div>
 				<div className='postBottomRight'>
 					<span>{post.comment}comments</span>
