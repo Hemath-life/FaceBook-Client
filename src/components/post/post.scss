@@ -1,0 +1,47 @@
+.postContainer {
+	margin: 10px 0;
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+	.postTop img {
+		width: 32px;
+		height: 32px;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+}
+
+.userName {
+	font-weight: 600;
+}
+
+.postDate {
+	font-size: 12px;
+}
+
+.postCenter {
+	margin-top: 10px;
+	width: 100%;
+	img {
+		margin-top: 10px;
+		width: 100%;
+		object-fit: cover;
+		border-radius: 10px;
+	}
+}
+
+.postBottom {
+	margin-top: 10px;
+	text-transform: capitalize;
+	img {
+		width: 32px;
+		height: 32px;
+		object-fit: cover;
+	}
+	.postBottomRight {
+		span {
+			cursor: pointer;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+@mixin listAlign {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.feed {
+	margin-top: 20px !important;
+
+	li {
+		span:first-child {
+			margin-right: 10px;
+		}
+	}
+}
+
+.friendLists {
+	li {
+		img {
+			margin-right: 10px;
+			border-radius: 50%;
+			object-fit: cover;
+			width: 32px;
+			height: 32px;
+		}
+	}
+}
+
+.feed,
+.friendLists {
+	padding: 0 !important;
+	li {
+		@include listAlign();
+	}
+}
