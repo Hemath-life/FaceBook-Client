@@ -1,4 +1,8 @@
+import { Users } from "../../dummyData"
+import Online from "../online/Online"
+
 import "./rightbar.scss"
+
 const RightBar = () => {
 	return (
 		<div className='rightBar'>
@@ -14,101 +18,11 @@ const RightBar = () => {
 					<span>
 						<b>Online Friends</b>
 					</span>
-					<ul className='p-0 d-flex  mt-2 flex-column'>
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>{" "}
-						<li className='mt-2'>
-							<img src='assets/person/10.jpeg' alt='' />
-							<span className='online'></span>
-							<span className='ms-2'>Justin Olivia</span>
-						</li>
-					</ul>
+					{Users.map(u => (
+						<Online key={u.id} user={u} />
+					))}
 				</div>
 			</div>
-			.
 		</div>
 	)
 }

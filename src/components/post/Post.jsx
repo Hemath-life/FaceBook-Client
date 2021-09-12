@@ -1,13 +1,22 @@
+import { Users } from "../../dummyData"
 import "./post.scss"
 
-const Post = () => {
+const Post = ({ post }) => {
+	const user = Users.filter(u => u.id === 1)
 	return (
 		<div className='postContainer'>
 			<div className='postTop d-flex justify-content-between align-items-center'>
 				<div className='postTopLeft  d-flex justify-content-between align-items-center'>
-					<img src='assets/person/8.jpeg' alt='' srcset='' className='' />
-					<div className='userName ms-2'>Justin</div>
-					<div className='postDate ms-2'>8 mins ago</div>
+					<img
+						src={Users.filter(u => u.id === post.userId)[0].profilePicture}
+						alt=''
+						srcset=''
+						className=''
+					/>
+					<div className='userName ms-2'>
+						{Users.filter(u => u.id === post.userId)[0].username}
+					</div>
+					<div className='postDate ms-2'>{post.date}</div>
 				</div>
 				<div className='postTopRight'>
 					<span>
@@ -22,17 +31,17 @@ const Post = () => {
 				</div>
 			</div>
 			<div className='postCenter'>
-				<span>my first post</span>
-				<img src='assets/post/1.jpeg' alt='' />
+				<span>{post?.desc}</span>
+				<img src={post.photo} alt='' />
 			</div>
 			<div className='postBottom d-flex justify-content-between align-items-center'>
 				<div className='postBottomLeft d-flex justify-content-between align-items-center'>
 					<img className=' ' src='assets/like.png' alt='' />
 					<img className='ms-2' src='assets/heart.png' alt='' />
-					<span className='ms-2'>32 people like it</span>
+					<span className='ms-2'>{post.like} people like it</span>
 				</div>
 				<div className='postBottomRight'>
-					<span>9 comments</span>
+					<span>{post.comment}comments</span>
 				</div>
 			</div>
 		</div>
