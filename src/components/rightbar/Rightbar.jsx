@@ -5,7 +5,7 @@ import "./rightbar.scss"
 
 const RightBar = () => {
 	return (
-		<div className='rightBar'>
+		<div className='rightBar p-3'>
 			<div className='birthdayContainer d-flex justify-content-center align-items-center'>
 				<img src='assets/gift.png' alt='' />
 				<span className='text-capitalize ms-2 '>
