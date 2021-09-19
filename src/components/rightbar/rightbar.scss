@@ -44,3 +44,44 @@
 		}
 	}
 }
+
+.profileRightBar {
+	h1 {
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+	.key {
+		margin-right: 10px;
+		color: #555;
+	}
+	.value {
+		text-transform: capitalize !important;
+	}
+
+	.user-friends {
+		width: 100%;
+		padding: 0;
+
+		display: flex;
+
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: space-between;
+		li {
+			margin-top: 20px;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			span {
+				text-align: center;
+			}
+		}
+		img {
+			padding: 0;
+			height: 120px;
+			width: 120px;
+			object-fit: cover;
+			border-radius: 5px;
+		}
+	}
+}
