@@ -92,7 +92,9 @@ const ProfileRightBar = () => {
 const RightBar = ({ profile }) => {
 	console.log(profile)
 	return (
-		<div className='rightBar p-3 w-50'>{profile ? <ProfileRightBar /> : <HomeRightBar />}</div>
+		<div className={"rightBar p-3 w-" + (profile ? 50 : 100)}>
+			{profile ? <ProfileRightBar /> : <HomeRightBar />}
+		</div>
 	)
 }
 
