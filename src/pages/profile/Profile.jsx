@@ -20,13 +20,13 @@ const Profile = () => {
 						<div className='profileBottom d-flex flex-column'>
 							<img src='./assets/person/2.jpeg' alt='' />
 							<h1>Hemath Kumar G</h1>
-                                                                      <p>Be Happy All</p>
+							<p>Be Happy All</p>
 						</div>
 					</div>
 					<div className=''>
 						<div className='d-flex'>
 							<Feed />
-							<RightBar />
+							<RightBar profile />
 						</div>
 					</div>
 				</div>

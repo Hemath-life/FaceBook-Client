@@ -5,7 +5,7 @@ import Feed from "../../components/feed/Feed"
 import "./home.scss"
 const Home = () => {
 	return (
-		<>
+		<div>
 			<Topbar />
 
 			<div className=' d-flex w-100 container-fluid homeBarList'>
@@ -17,7 +17,7 @@ const Home = () => {
 					<RightBar />
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }
 

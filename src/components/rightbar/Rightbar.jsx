@@ -89,12 +89,10 @@ const ProfileRightBar = () => {
 	)
 }
 
-const RightBar = () => {
+const RightBar = ({ profile }) => {
+	console.log(profile)
 	return (
-		<div className='rightBar p-3 w-50'>
-			<ProfileRightBar />
-			{/* <HomeRightBar /> */}
-		</div>
+		<div className='rightBar p-3 w-50'>{profile ? <ProfileRightBar /> : <HomeRightBar />}</div>
 	)
 }
 
