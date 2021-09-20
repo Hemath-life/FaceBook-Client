@@ -1,6 +1,10 @@
 import { useState } from "react"
 import { Users } from "../../dummyData"
 import "./post.scss"
+require("dotenv").config()
+const PF = process.env.REACT_APP_PUBLIC_FOLDER
+
+
 
 const Post = ({ post }) => {
 	const [like, setLike] = useState(post.like)
@@ -15,7 +19,7 @@ const Post = ({ post }) => {
 			<div className='postTop d-flex justify-content-between align-items-center'>
 				<div className='postTopLeft  d-flex justify-content-between align-items-center'>
 					<img
-						src={Users.filter(u => u.id === post.userId)[0].profilePicture}
+						src={Users.filter(u => u.id === post.userId) [0].profilePicture}
 						alt=''
 						srcset=''
 						className=''
@@ -39,7 +43,7 @@ const Post = ({ post }) => {
 			</div>
 			<div className='postCenter'>
 				<span>{post?.desc}</span>
-				<img src={post.photo} alt='' />
+				<img src={PF + post.photo} alt='' />
 			</div>
 			<div className='postBottom d-flex justify-content-between align-items-center'>
 				<div className='postBottomLeft d-flex justify-content-between align-items-center'>

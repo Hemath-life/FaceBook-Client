@@ -2,6 +2,8 @@ import { Users } from "../../dummyData"
 import Online from "../online/Online"
 
 import "./rightbar.scss"
+require("dotenv").config()
+const PF = process.env.REACT_APP_PUBLIC_FOLDER
 
 const HomeRightBar = () => {
 	return (
@@ -60,27 +62,27 @@ const ProfileRightBar = () => {
 				<h2 className='profileRightBarTitle'>User Friends </h2>
 				<ul className='user-friends'>
 					<li>
-						<img src='./assets/person/6.jpeg' alt='' />
+						<img src={PF + "person/6.jpeg"} alt='' />
 						<span>Justin Hem</span>
 					</li>
 					<li>
-						<img src='./assets/person/5.jpeg' alt='' />
+						<img src={PF + "person/6.jpeg"} alt='' />
 						<span>Justin Hem</span>
 					</li>
 					<li>
-						<img src='./assets/person/4.jpeg' alt='' />
+						<img src={PF + "person/1.jpeg"} alt='' />
 						<span>Justin Hem</span>
 					</li>
 					<li>
-						<img src='./assets/person/3.jpeg' alt='' />
+						<img src={PF + "person/2.jpeg"} alt='' />
 						<span>Justin Hem</span>
 					</li>
 					<li>
-						<img src='./assets/person/2.jpeg' alt='' />
+						<img src={PF + "person/3.jpeg"} alt='' />
 						<span>Justin Hem</span>
 					</li>
 					<li>
-						<img src='./assets/person/1.jpeg' alt='' />
+						<img src={PF + "person/4.jpeg"} alt='' />
 						<span>Justin Hem</span>
 					</li>
 				</ul>

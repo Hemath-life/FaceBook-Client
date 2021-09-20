@@ -1,10 +1,10 @@
-import React from "react"
 import Feed from "../../components/feed/Feed"
 import LeftBar from "../../components/leftbar/LeftBar"
-import Post from "../../components/post/Post"
 import RightBar from "../../components/rightbar/RightBar"
 import Topbar from "../../components/topbar/Topbar"
 import "./profile.scss"
+require("dotenv").config()
+const PF = process.env.REACT_APP_PUBLIC_FOLDER
 
 const Profile = () => {
 	return (
@@ -15,10 +15,10 @@ const Profile = () => {
 				<div className='ProfileContainer  '>
 					<div className='profile'>
 						<div className='profileTop'>
-							<img src='./assets/person/1.jpeg' alt='' />
+							<img src={PF + "person/1.jpeg"} />
 						</div>
 						<div className='profileBottom d-flex flex-column'>
-							<img src='./assets/person/2.jpeg' alt='' />
+							<img src={PF + "person/3.jpeg"} />
 							<h1>Hemath Kumar G</h1>
 							<p>Be Happy All</p>
 						</div>

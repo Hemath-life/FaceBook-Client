@@ -1,6 +1,10 @@
 import { Users } from "../../dummyData"
 import "./leftBar.scss"
+require("dotenv").config()
+
 const LeftBar = () => {
+	const PF = process.env.REACT_APP_PUBLIC_FOLDER
+
 	return (
 		<div className=' sideBar'>
 			<ul className='feed'>
@@ -123,7 +127,7 @@ const LeftBar = () => {
 				{Users.map(u => {
 					return (
 						<li>
-							<img src={u.profilePicture} alt='' />
+							<img src={PF + u.profilePicture} alt='' />
 							<span>{u.username}</span>
 						</li>
 					)
