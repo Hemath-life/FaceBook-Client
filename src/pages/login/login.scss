@@ -1,0 +1,68 @@
+.loginContainer {
+	background: rgba(255, 255, 255, 0.829);
+}
+
+.loginLogo {
+	font-size: 50px;
+	font-weight: 800;
+	color: #1775ee;
+	margin-bottom: 10px;
+}
+
+.loginRight {
+	input:first-child {
+		margin-bottom: 20px;
+	}
+	input:focus {
+		outline: none;
+		width: 100%;
+		transition: 0.2s linear;
+		border-bottom: 2px solid #1775ee !important;
+	}
+	input {
+		width: 100%;
+		border-bottom: 2px solid rgba(0, 0, 0, 0.212) !important;
+		height: 2rem;
+		padding: 0 10px;
+		// border-radius: 5px;
+	}
+	::placeholder {
+		color: rgba(0, 0, 0, 0.212) !important;
+		opacity: 1;
+	}
+	input[type="submit"] {
+		transition: 0.3s linear;
+
+		height: 3rem;
+		color: #fff;
+		font-weight: bold;
+		border: none;
+		background-color: #1775ee;
+		border-radius: 10px !important;
+	}
+	input[type="submit"]:hover {
+		background-color: rgb(21, 34, 216);
+	}
+}
+.forgetPassword {
+	text-align: center;
+	color: #1775ee !important;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.createAccount {
+          align-self: center;
+	margin-top: 10px;
+	text-align: center;
+	width: 50%;
+	background: rgb(8, 197, 8);
+	height: 3rem;
+	font-size: 1rem;
+	transition: 0.1s linear;
+	font-weight: 600 !important;
+	color: white !important;
+}
+.createAccount:hover {
+          background: rgb(9, 158, 9);  
+}
