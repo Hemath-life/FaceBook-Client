@@ -1,14 +1,23 @@
-import { useState } from "react"
-import { Users } from "../../dummyData"
+import axios from "axios"
+import { useEffect, useState } from "react"
 import "./post.scss"
+import { format } from "timeago.js"
+import { Link } from "react-router-dom"
 require("dotenv").config()
 const PF = process.env.REACT_APP_PUBLIC_FOLDER
 
-
-
 const Post = ({ post }) => {
-	const [like, setLike] = useState(post.like)
+	const [like, setLike] = useState(post.likes.length)
 	const [isLiked, setIsLiked] = useState(false)
+	const [user, setUser] = useState({})
+
+	useEffect(() => {
+		const fetchUser = async () => {
+			const res = await axios.get(`http://localhost:8800/api/users?userId=${post.userId}`)
+			setUser(res.data)
+		}
+		fetchUser()
+	}, [post.userId])
 
 	const likeHandel = () => {
 		setLike(isLiked ? like - 1 : like + 1)
@@ -18,16 +27,21 @@ const Post = ({ post }) => {
 		<div className='postContainer'>
 			<div className='postTop d-flex justify-content-between align-items-center'>
 				<div className='postTopLeft  d-flex justify-content-between align-items-center'>
-					<img
-						src={Users.filter(u => u.id === post.userId) [0].profilePicture}
-						alt=''
-						srcset=''
-						className=''
-					/>
-					<div className='userName ms-2'>
-						{Users.filter(u => u.id === post.userId)[0].username}
-					</div>
-					<div className='postDate ms-2'>{post.date}</div>
+					<Link to={`/profile/${post.userId}`}>
+						<img
+							src={
+								typeof user.profilePicture !== "string"
+									? user.profilePicture
+									: PF + "person/noAvatar.png"
+							}
+							alt=''
+							srcset=''
+							className=''
+						/>
+					</Link>
+
+					<div className='userName ms-2'>{user.username}</div>
+					<div className='postDate ms-2'>{format(post.createdAt)}</div>
 				</div>
 				<div className='postTopRight'>
 					<span>
@@ -43,17 +57,16 @@ const Post = ({ post }) => {
 			</div>
 			<div className='postCenter'>
 				<span>{post?.desc}</span>
-				<img src={PF + post.photo} alt='' />
+
+				<img src={post.img ? post.img : PF + "person/noAvatar.png"} alt='' />
 			</div>
 			<div className='postBottom d-flex justify-content-between align-items-center'>
 				<div className='postBottomLeft d-flex justify-content-between align-items-center'>
-					<img className=' ' src='assets/like.png' alt='' onClick={likeHandel} />
-					<img className='ms-2' src='assets/heart.png' alt='' />
+					<img className=' ' src={PF + "/like.png"} alt='' onClick={likeHandel} />
+					<img className='ms-2' src={PF + "/heart.png"} alt='' />
 					<span className='ms-2'>{like} people like it</span>
 				</div>
-				<div className='postBottomRight'>
-					<span>{post.comment}comments</span>
-				</div>
+				<div className='postBottomRight'>{/* <span>{post.comment}comments</span> */}</div>
 			</div>
 		</div>
 	)

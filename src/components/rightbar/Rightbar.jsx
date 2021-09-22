@@ -30,7 +30,7 @@ const HomeRightBar = () => {
 		</>
 	)
 }
-const ProfileRightBar = () => {
+const ProfileRightBar = ({ profile }) => {
 	return (
 		<>
 			<div className='profileRightBar'>
@@ -38,19 +38,21 @@ const ProfileRightBar = () => {
 				<ui className='text-capitalize'>
 					<li className='text-capitalize'>
 						<span className='key'>City:</span>
-						<span className='value'>Chennai</span>
+						<span className=' value text-capitalize'>{profile.city}</span>
 					</li>
 				</ui>
 				<ui>
 					<li className='text-capitalize'>
 						<span className='key'>From:</span>
-						<span className='value'>Tamil nadu</span>
+						<span className='value'>{profile.from}</span>
 					</li>
 				</ui>
 				<ui>
 					<li className='text-capitalize'>
 						<span className='key'>Relationship:</span>
-						<span className='value'>single</span>
+						<span className='value'>
+							{profile.relationship === 1 ? "single" : "married"}
+						</span>
 					</li>
 				</ui>
 				<ui>
@@ -92,10 +94,9 @@ const ProfileRightBar = () => {
 }
 
 const RightBar = ({ profile }) => {
-	console.log(profile)
 	return (
 		<div className={"rightBar p-3 w-" + (profile ? 50 : 100)}>
-			{profile ? <ProfileRightBar /> : <HomeRightBar />}
+			{profile ? <ProfileRightBar profile={profile} /> : <HomeRightBar />}
 		</div>
 	)
 }

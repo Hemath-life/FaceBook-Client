@@ -1,5 +1,5 @@
 import "./topbar.scss"
-
+import { Link } from "react-router-dom"
 const Topbar = () => {
 	return (
 		<nav class='navbar navbar-light bg-blue navbar-expand-md'>
@@ -7,10 +7,9 @@ const Topbar = () => {
 				{/* brand title */}
 
 				<div class='  text-white w-25 d-flex align-items-center  '>
-					<div class=' w-10  '>
-						<img src='/assets/person/1.jpeg' alt='' className='topbarImg' />
-					</div>
-					<h5 className=' mb-0 mx-2 '>FaceBook</h5>
+					<Link to='/' style={{ textDecoration: "none", color: "white" }}>
+						<h5 className=' mb-0 mx-2 '>FaceBook</h5>
+					</Link>
 				</div>
 
 				{/* nav list */}
@@ -31,6 +30,11 @@ const Topbar = () => {
 					</svg>
 				</button>
 
+				<div class=' w-10  '>
+					<Link to='/profile/1' style={{ textDecoration: "none" }}>
+						<img src='/assets/person/1.jpeg' alt='' className='topbarImg' />
+					</Link>
+				</div>
 				<div class='collapse navbar-collapse ' id='navbarNav'>
 					<ul class='navbar-nav w-100 d-flex justify-content-between align-items-md-center'>
 						<li className='nav-link w-75 mx-md-3'>
@@ -55,7 +59,9 @@ const Topbar = () => {
 							</div>
 						</li>
 						<li class='nav-item mt-1 mt-md-0 w-10 mx-md-2 '>
-							<a class='nav-link active text-white p-0'>Home</a>
+							<Link to='/' className='text-white ' style={{ textDecoration: "none" }}>
+								<a class='nav-link active text-white p-0'>Home</a>
+							</Link>
 						</li>
 						<li class='nav-item mt-1 mt-md-0 w-10 mx-md-2'>
 							<a class='nav-link active text-white p-0'>Timeline</a>

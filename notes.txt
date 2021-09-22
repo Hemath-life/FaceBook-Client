@@ -5,7 +5,9 @@ REACT JS
 1. If want to use scss in react install scss compiler and add create scss file automatically while compiling react will convert.
 
 
-
+1. useReduce
+2.useParams
+3.useRef
 
 What's Bootstrap ?
           _ Bootstrap is the most popular CSS Framework for developing responsive and mobile-first websites.
